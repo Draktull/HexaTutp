@@ -263,7 +263,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Red
+  m_Text: Yellow
 --- !u!222 &83605139
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 610243524}
   - component: {fileID: 610243525}
   m_Layer: 5
-  m_Name: Red
+  m_Name: Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1019,9 +1019,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 530531152}
   color:
-  - {r: 0.15590635, g: 0.9117647, b: 0.013408317, a: 0}
-  - {r: 0.97794116, g: 0.2157223, b: 0.2157223, a: 0}
-  - {r: 0.14511244, g: 0.2747584, b: 0.89705884, a: 0}
+  - {r: 0.121568635, g: 0.8941177, b: 0.24705884, a: 0}
+  - {r: 1, g: 0.98823535, b: 0.13725491, a: 0}
+  - {r: 0.32941177, g: 0.5411765, b: 0.9725491, a: 0}
 --- !u!114 &1179047365
 MonoBehaviour:
   m_ObjectHideFlags: 0
