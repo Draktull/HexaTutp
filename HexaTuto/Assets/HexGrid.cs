@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,9 @@ public class HexGrid : MonoBehaviour
 
     private HexMesh _mesh;
     private Canvas _gridCanvas;
+
+    public Color defaultColor;
+    public Color touchedColor;
 
     void Awake()
     {
@@ -42,12 +46,26 @@ public class HexGrid : MonoBehaviour
         cell.transform.SetParent(this.transform, false);
         cell.transform.localPosition = position;
         cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
+        cell.color = defaultColor;
+
+
         //label
         Text label = Instantiate<Text>(cellLabelPrefab);
         label.rectTransform.SetParent(_gridCanvas.transform, false);
         label.rectTransform.anchoredPosition = new Vector2(position.x, position.z);
         label.text = cell.coordinates.ToStringOnSeparateLines();
-
+        
     }
 
+    public  void ColorCell(Vector3 point ,Color color ) {
+        point = transform.InverseTransformDirection(point);
+        HexCoordinates coordinates = HexCoordinates.FromPosition(point);
+        int index = coordinates.Z *this.witdh + coordinates.Z/2+ coordinates.X;
+
+
+        //int index = coordinates.X + coordinates.Z * this.witdh + coordinates.Z / 2;
+        HexCell cell = cells[index];
+        cell.color = color;
+        this._mesh  .Triangulate(cells);
+    }
 }
