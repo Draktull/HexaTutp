@@ -16,8 +16,8 @@ public class HexGrid : MonoBehaviour {
     private HexMesh _mesh;
     private Canvas _gridCanvas;
 
-    public Color defaultColor;
-    public Color touchedColor;
+    public Color defaultColor = Color.white;
+
 
     void Awake() {
         _mesh = GetComponentInChildren<HexMesh>();
@@ -50,7 +50,7 @@ public class HexGrid : MonoBehaviour {
             if ((z & 1) == 0) {
                 cell.SetNeighbor(HexDirection.SE, cells[i - width]);
                 if (x > 0)
-                    cell.SetNeighbor(HexDirection.SE, cells[i - width - 1]);
+                    cell.SetNeighbor(HexDirection.SW, cells[i - width - 1]);
             }
             else {
                 cell.SetNeighbor(HexDirection.SW, cells[i - width]);
